@@ -1,0 +1,21 @@
+<div id="invalid" style="font-size: 14px; color: rgb(170, 100, 99); margin: 0px 0px 10px; text-align: center; line-height: 18px; background-color: rgb(255, 239, 239); padding: 12px; font-weight: 600; border-radius: 3px; border: 2px solid rgb(255, 153, 153); display: none; opacity: 1;"><span style="display:block">Please enter your work email address.</span></div>
+
+<script>
+var email = document.getElementById('{{ns}}-field-email');
+
+function validate(){
+
+    var inputVal = document.getElementById('{{ns}}-field-email').value;
+    var pattern = /^[^ ]+@[me|mac|icloud|gmail|googlemail|hotmail|live|msn|outlook|yahoo|ymail|aol]+\.[a-z]{2,3}$/;
+
+    if (inputVal.match(pattern)) {
+    document.getElementById("invalid").style.display = "block";
+    email.style.border = "2px solid rgb(255, 153, 153)";
+    } else {
+    document.getElementById("invalid").style.display = "none";
+    email.style.border = "none";
+}
+}
+
+email.addEventListener('keydown', validate);
+</script>
